@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAPPY BIRTHDAY PRACHI🎉 ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,#090909,#1b1022,#2b1120);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* Floating Hearts */
+
+    .heart{
+      position:fixed;
+      bottom:-20px;
+      color:#ff5ca8;
+      animation:floatUp linear infinite;
+      opacity:0.7;
+      z-index:0;
+    }
+
+    @keyframes floatUp{
+      0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+      }
+      10%{
+        opacity:0.8;
+      }
+      100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+
+    section{
+      min-height:100vh;
+      padding:80px 10%;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:5rem;
+      font-family:'Dancing Script',cursive;
+      color:#ff8cc6;
+      text-shadow:0 0 20px rgba(255,105,180,0.7);
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      max-width:700px;
+      font-size:1.2rem;
+      line-height:2;
+      color:#f4d9e8;
+    }
+
+    .glow{
+      color:#ff6fae;
+      font-weight:600;
+    }
+
+    .btn{
+      margin-top:40px;
+      padding:14px 32px;
+      border:none;
+      border-radius:50px;
+      background:linear-gradient(45deg,#ff4f95,#ff8cc6);
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 0 20px rgba(255,105,180,0.4);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+    }
+
+    .hidden-message{
+      margin-top:30px;
+      display:none;
+      font-size:1.1rem;
+      color:#ffd7ea;
+      line-height:2;
+      max-width:700px;
+      animation:fadeIn 3s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:3rem;
+      margin-bottom:60px;
+      color:#ff9acb;
+      font-family:'Dancing Script',cursive;
+    }
+
+    .timeline{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:30px;
+      border-radius:25px;
+      backdrop-filter:blur(10px);
+      transition:0.4s;
+      box-shadow:0 0 25px rgba(255,105,180,0.08);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 30px rgba(255,105,180,0.2);
+    }
+
+    .card h3{
+      color:#ff9ecf;
+      margin-bottom:15px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      border-radius:25px;
+      transition:0.4s;
+      border:2px solid rgba(255,255,255,0.08);
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    .ending{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    .ending p{
+      max-width:850px;
+      font-size:1.2rem;
+      line-height:2.2;
+      color:#ffe1ef;
+    }
+
+    .signature{
+      margin-top:50px;
+      font-family:'Dancing Script',cursive;
+      font-size:3rem;
+      color:#ff8dc6;
+    }
+
+    .small{
+      margin-top:10px;
+      color:#c9a7b7;
+      font-size:1rem;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:3.5rem;
+      }
+
+      .section-title{
+        font-size:2.5rem;
+      }
+
+      .hero p,
+      .ending p{
+        font-size:1rem;
+      }
+    }
+
+    #musicBtn{
+    position:fixed;
+    top:20px;
+    right:20px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:30px;
+
+    cursor:pointer;
+
+    z-index:9999;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Hearts -->
+  <script>
+    for(let i=0;i<35;i++){
+      let heart=document.createElement("div");
+      heart.className="heart";
+      heart.innerHTML="❤";
+      heart.style.left=Math.random()*100+"vw";
+      heart.style.fontSize=(Math.random()*20+10)+"px";
+      heart.style.animationDuration=(Math.random()*10+8)+"s";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Hero Section -->
+
+  <section class="hero">
+
+    <button id="musicBtn">
+    🎵 Play Music
+</button>
+
+    <h1>Dear Prachi....</h1>
+
+    <p>
+      It's WEDNESSDAY, 23RD SEPT 2026. A day idk why feels so familier and cheerfull and exciting and like every year I got this beautifull chance to say you again this time wishing to continue this likee...forever..<br>
+     <span class="glow">SOOOOOOOOO</span>.
+      <br><br>
+      I WISH YOU....
+    </p>
+
+    <button class="btn" onclick="showMessage()">
+      CLICK HERE MISS...😊
+    </button>
+
+    <div class="hidden-message" id="message">
+      <h1 class="section-title">HAPPIEST BIRTHDAY PRACHI..🎉😊🍬🍻🎂</h1>
+      <br><br>
+      Miss kaushik.. its an honor🤗🤗 to wish u and I will gladly be blessed to have this every year😌🥰. Many congratulations to you for one more year being a frnd of this young charming guy Devansh..jk😂😝
+      <br><br>
+      <p>WELL you r one of my oldest frnd🤜🤛, one of the most close to me🥰, one with most beautiful HEART❤️, purest feelings😌, sweetest voice🤭, charming nature🥰, funny humor😄, gorgeous face😍..ughh i can write an essay😁😄 if u want but baad me kabhi😝 ..kal mera exam h😂 <br><br>
+      congratulations being 20 years old prachi..🎉🎂🍻 </p>
+    </div>
+
+  </section>
+
+  <!-- Timeline -->
+
+  <section>
+
+    <h2 class="section-title">Miss Prachi.. ✨</h2>
+
+    <div class="timeline">
+
+      <div class="card">
+        <h3>OUR FRIENDSHIP ❤️</h3>
+        <p>
+          We are frnds since 2018..🥰 8 years of frndship and a strong bond.😊 you are really so gd prachi😊 and its srsly feels so gd to have a frnd a like u.😌❤️ ik me kabhi kabhi jyada flirt ya pareshan kr deta hu🤷🤷 but srsly u r my that frnd jiske sath me humesa dost rehna chahta hu.😊..no matter we got married or we get settled..😄
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>why I Built this website..🤔</h3>
+        <p>
+          Because u r my frnd which means a lot to me.🥰 mzak kr rha hu..😂😂. mere pass kuch krne ko nhi tha isiliye mene kr diya..🤷🤷 though i have an exam tmrw and ik nthng about that..😕 
+          but still..frnds matters a lot uk❤️😌
+        </p>
+      </div>
+  </section>
+
+  <!-- Ending -->
+
+  <section class="ending">
+
+    <h2 class="section-title"> Happiest Birthday Girl..🎉🥰</h2>
+
+    <div class="signature">
+      DEVANSH...
+    </div>
+
+    <div class="small">
+      — just a frnd..😉
+    </div>
+
+  </section>
+
+  <script>
+    function showMessage(){
+      document.getElementById("message").style.display="block";
+    }
+  </script>
+<audio id="bgMusic" loop>
+    <source src="Aarzu.mp3" type="audio/mpeg">
+</audio>
+<script src="script.js"></script>
+</body>
+</html>
